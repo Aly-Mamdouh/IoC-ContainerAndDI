@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!-- Setter Inject -->
+    <!-- <bean id="product" class="Product">
+        <property name="id" value="123"/>
+        <property name="name" value="Example Product"/>
+        <property name="price" value="9.99"/>
+        <property name="department" ref="dept"/>
+        <property name="addresses" >
+            <list>
+                <ref bean="address1"/>
+                <ref bean="address2"/>
+                <ref bean="address3"/>
+            </list>
+        </property>
+    </bean> -->
+
+    <!-- Constructor Inject-->
+    <bean id="pro" class="Product" >
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="alio"/>
+        <constructor-arg name="price" value="55"/>
+        <constructor-arg name="department" ref="dept"/>
+        <constructor-arg name="addresses">
+            <list>
+                <ref bean="address1"/>
+                <ref bean="address2"/>
+                <ref bean="address3"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Setter Inject -->
+    <bean id="dept" class="Department">
+        <property name="id" value="4"/>
+        <property name="name" value="IS"/>
+    </bean>
+    <!-- Setter Inject -->
+    <bean id="address1" class="Address">
+        <property name="id" value="66"/>
+        <property name="city" value="Cairo"/>
+    </bean>
+    <!-- Setter Inject -->
+    <bean id="address2" class="Address">
+        <property name="id" value="89"/>
+        <property name="city" value="Assiut"/>
+    </bean>
+    <!-- Setter Inject -->
+    <bean id="address3" class="Address">
+        <property name="id" value="14"/>
+        <property name="city" value="Minya"/>
+    </bean>
+</beans>
